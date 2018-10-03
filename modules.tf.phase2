@@ -1,0 +1,43 @@
+
+
+module "gcp_network_module" {
+    source = "github.com/HappyPathway/terraform-enterprise-private-module"
+    oauth_token = "${module.oauth_token.oauth_token}"
+    tfe_org = "${var.organization}"
+    tfe_token = "${var.atlas_token}"
+    repo = "${module.gcp_network_repo.repo_dest}"
+    github_organization = "${var.github_organization}"
+}
+
+
+
+module "gcp_network_firewall_module" {
+    source = "github.com/HappyPathway/terraform-enterprise-private-module"
+    oauth_token = "${module.oauth_token.oauth_token}"
+    tfe_org = "${var.organization}"
+    tfe_token = "${var.atlas_token}"
+    repo = "${module.gcp_network_firewall_repo.repo_dest}"
+    github_organization = "${var.github_organization}"
+}
+
+
+
+module "gcp_network_subnet_module" {
+    source = "github.com/HappyPathway/terraform-enterprise-private-module"
+    oauth_token = "${module.oauth_token.oauth_token}"
+    tfe_org = "${var.organization}"
+    tfe_token = "${var.atlas_token}"
+    repo = "${module.gcp_network_subnet_repo.repo_dest}"
+    github_organization = "${var.github_organization}"
+}
+
+
+
+module "gcp_instance_module" {
+    source = "github.com/HappyPathway/terraform-enterprise-private-module"
+    oauth_token = "${module.oauth_token.oauth_token}"
+    tfe_org = "${var.organization}"
+    tfe_token = "${var.atlas_token}"
+    repo = "${module.gcp_instance_repo.repo_dest}"
+    github_organization = "${var.github_organization}"
+}
